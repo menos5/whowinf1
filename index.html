@@ -28,7 +28,42 @@
       Who win F1 2015</span>
   </core-toolbar>
 
-  <section ng-controller="MyController">
+  <section ng-controller="Constructors">
+
+    <paper-shadow z="1">
+      <table layout>
+        <tr>
+          <th></th>
+          <th>Team</th>
+          <th class="prob">points</th>
+        </tr>
+        <tbody ng-repeat="team in resultados">
+        <tr>
+          <th class="dorsal">
+            <span class="{{team.Constructor.constructorId}}"></span></th>
+          <td class="nombre">
+            {{team.Constructor.name}}</td>
+          <td class="prob">
+            {{team.points}}</td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <!--!<paper-progress value="{{piloto.points / resultados[0].points * 100}}"></paper-progress>!-->
+            <paper-progress value="{{a(team.points)}}"
+                            secondaryProgress="{{b(team.points)}}"
+                            class="{{prob(team.points)}}"></paper-progress>
+          </td>
+        </tr>
+        <tr>
+        </tr>
+        </tbody>
+      </table>
+    </paper-shadow>
+
+  </section>
+
+
+  <section ng-controller="Drivers">
 
     <paper-shadow z="1">
       <table layout>
