@@ -14,6 +14,7 @@
   <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
   <link rel="import" href="bower_components/font-roboto/roboto.html">
   <link rel="import" href="bower_components/paper-button/paper-button.html">
+  <link rel="import" href="bower_components/paper-input/paper-input.html">
   <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
   <link rel="import" href="bower_components/paper-progress/paper-progress.html">
 
@@ -30,6 +31,8 @@
     <paper-icon-button icon="search" role="button" tabindex="0" aria-label="search"></paper-icon-button>
     <paper-icon-button icon="more-vert" role="button" tabindex="0" aria-label="more-vert"></paper-icon-button>
     !-->
+
+    <paper-input floatinglabel="Search" label="Search" ng-model="query"></paper-input>
     <div class="bottom fit" horizontal="" layout="">
 
       <paper-tabs selected="0" flex="" role="tablist" horizontal="" center="" layout="">
@@ -53,7 +56,7 @@
             <th>Team</th>
             <th class="prob">points</th>
           </tr>
-          <tbody ng-repeat="team in resultados">
+          <tbody ng-repeat="team in resultados | filter:query">
           <tr>
             <th class="dorsal">
               <span class="{{team.Constructor.constructorId}}"></span></th>
@@ -85,7 +88,7 @@
             <th>Piloto</th>
             <th class="prob">puntos</th>
           </tr>
-          <tbody ng-repeat="piloto in resultados">
+          <tbody ng-repeat="piloto in resultados | filter:query">
           <tr>
             <th class="dorsal">
               <span class="{{piloto.Constructors[0].constructorId}}">{{piloto.Driver.permanentNumber}}</span></th>
