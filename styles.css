@@ -20,7 +20,7 @@ a, a:hover {
 }
 
 core-toolbar {
-  background-color: #607D8B;
+  background-color: #222;
   box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
   color: #fff;
   font-size: 20px;
@@ -50,106 +50,106 @@ paper-fab {
 }
 
 paper-tabs {
-  background-color: #5677fc;
+  background-color: #222;
   color: #fff;
 }
 
 paper-tabs[noink][nobar] paper-tab.core-selected {
-  color: #ffff8d;
+  color: #d31411;
 }
-      paper-shadow {
-        max-width: 800px;
-        margin:auto;
-      }
-      paper-progress {
-        display: block;
-        width: auto;
-        padding: 0 0 15px;
-      }
-      paper-progress::shadow #progressContainer {
-        background-color: #eee;
-      }
-      paper-progress.eliminado::shadow #activeProgress {
-        background-color: #c00;
-      }
-      paper-progress::shadow #secondaryProgress {
-        opacity: .5;
-      }
-      table {
-        width: 100%;
-      }
-      td, th {
-        text-align: left;
-        padding: 15px 15px 0;
-      }
-      .dorsal {
-        width:10%;
-      }
-      .nombre {
+paper-shadow {
+  max-width: 800px;
+  margin:auto;
+}
+paper-progress {
+  display: block;
+  width: auto;
+  padding: 0 0 15px;
+}
+paper-progress::shadow #progressContainer {
+  background-color: #eee;
+}
+paper-progress.eliminado::shadow #activeProgress {
+  background-color: #c00;
+}
+paper-progress::shadow #secondaryProgress {
+  opacity: .5;
+}
+table {
+  width: 100%;
+}
+td, th {
+  text-align: left;
+  padding: 15px 15px 0;
+}
+.dorsal {
+  width:10%;
+}
+.nombre {
 
-      }
-      .prob {
-        text-align:right;
-        width:10%;
-      }
-      .dorsal span {
-        display: inline-block;
-        width:32px;
-        height:32px;
-        line-height:32px;
-        text-align:center;
-        border-radius: 50%;
-        background: #eee;
-        border: 4px solid #666;
-        color: #c00;
-      }
-      .dorsal .red_bull {
-        background-color:#036;
-        border-color:#c00;
-        color:#fc0;
-      }
-      .dorsal .ferrari {
-        background-color:#c00;
-        border-color:#333;
-        color:#fff;
-      }
-      .dorsal .mclaren {
-        background-color:#ccc;
-        border-color:#c00;
-        color:#333;
-      }
-      .dorsal .mercedes {
-        background-color:#ccc;
-        border-color:#333;
-        color:#396;
-      }
-      .dorsal .lotus_f1 {
-        background-color:#333;
-        border-color:#c00;
-        color:#fc0;
-      }
-      .dorsal .williams {
-        background-color:#fff;
-        border-color:#039;
-        color:#c00;
-      }
-      .dorsal .force_india {
-        background-color:#333;
-        border-color:#f60;
-        color:#999;
-      }
-      .dorsal .sauber {
-        background-color:#09c;
-        border-color:#fc0;
-        color:#fff;
-      }
-      .dorsal .toro_rosso {
-        background-color:#024;
-        border-color:#900;
-        color:#960;
-      }
-      .dorsal .manor {
-        background-color:#fff;
-        border-color:#000;
-        color:#000;
-      }
+}
+.prob {
+  text-align:right;
+  width:10%;
+}
+.dorsal span {
+  display: inline-block;
+  width:32px;
+  height:32px;
+  line-height:32px;
+  text-align:center;
+  border-radius: 50%;
+  background: #eee;
+  border: 4px solid #666;
+  color: #c00;
+}
+.dorsal .red_bull {
+  background-color:#036;
+  border-color:#c00;
+  color:#fc0;
+}
+.dorsal .ferrari {
+  background-color:#c00;
+  border-color:#333;
+  color:#fff;
+}
+.dorsal .mclaren {
+  background-color:#ccc;
+  border-color:#c00;
+  color:#333;
+}
+.dorsal .mercedes {
+  background-color:#ccc;
+  border-color:#333;
+  color:#396;
+}
+.dorsal .lotus_f1 {
+  background-color:#333;
+  border-color:#c00;
+  color:#fc0;
+}
+.dorsal .williams {
+  background-color:#fff;
+  border-color:#039;
+  color:#c00;
+}
+.dorsal .force_india {
+  background-color:#333;
+  border-color:#f60;
+  color:#999;
+}
+.dorsal .sauber {
+  background-color:#09c;
+  border-color:#fc0;
+  color:#fff;
+}
+.dorsal .toro_rosso {
+  background-color:#024;
+  border-color:#900;
+  color:#960;
+}
+.dorsal .manor {
+  background-color:#fff;
+  border-color:#000;
+  color:#000;
+}

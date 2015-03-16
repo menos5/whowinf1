@@ -21,79 +21,95 @@
 </head>
 
 <body unresolved ng-app="myapp">
-  <core-toolbar>
-    <paper-icon-button icon="menu"></paper-icon-button>
-    <span flex>
-      <core-icon icon="insert-chart"></core-icon>
-      Who win F1 2015</span>
+  <core-toolbar class="medium-tall">
+    <!--!
+    <paper-icon-button icon="menu" role="button" tabindex="0" aria-label="menu"></paper-icon-button>
+    !-->
+    <div flex="">Who Will Win F1</div>
+    <!--!
+    <paper-icon-button icon="search" role="button" tabindex="0" aria-label="search"></paper-icon-button>
+    <paper-icon-button icon="more-vert" role="button" tabindex="0" aria-label="more-vert"></paper-icon-button>
+    !-->
+    <div class="bottom fit" horizontal="" layout="">
+
+      <paper-tabs selected="0" flex="" role="tablist" horizontal="" center="" layout="">
+
+        <paper-tab role="tab" inline="" flex="" center-center="" horizontal="" layout="" class="core-selected" active="">Drivers</paper-tab>
+        <paper-tab role="tab" inline="" flex="" center-center="" horizontal="" layout="">Constructors</paper-tab>
+
+      </paper-tabs>
+
+    </div>
+
   </core-toolbar>
 
-  <section ng-controller="Constructors">
+  <core-pages selected="0">
 
-    <paper-shadow z="1">
-      <table layout>
-        <tr>
-          <th></th>
-          <th>Team</th>
-          <th class="prob">points</th>
-        </tr>
-        <tbody ng-repeat="team in resultados">
-        <tr>
-          <th class="dorsal">
-            <span class="{{team.Constructor.constructorId}}"></span></th>
-          <td class="nombre">
-            {{team.Constructor.name}}</td>
-          <td class="prob">
-            {{team.points}}</td>
-        </tr>
-        <tr>
-          <td colspan="3">
-            <!--!<paper-progress value="{{piloto.points / resultados[0].points * 100}}"></paper-progress>!-->
-            <paper-progress value="{{a(team.points)}}"
-                            secondaryProgress="{{b(team.points)}}"
-                            class="{{prob(team.points)}}"></paper-progress>
-          </td>
-        </tr>
-        <tr>
-        </tr>
-        </tbody>
-      </table>
-    </paper-shadow>
+    <div ng-controller="Constructors">
+      <paper-shadow z="1">
+        <table layout>
+          <tr>
+            <th></th>
+            <th>Team</th>
+            <th class="prob">points</th>
+          </tr>
+          <tbody ng-repeat="team in resultados">
+          <tr>
+            <th class="dorsal">
+              <span class="{{team.Constructor.constructorId}}"></span></th>
+            <td class="nombre">
+              {{team.Constructor.name}}</td>
+            <td class="prob">
+              {{team.points}}</td>
+          </tr>
+          <tr>
+            <td colspan="3">
+              <!--!<paper-progress value="{{piloto.points / resultados[0].points * 100}}"></paper-progress>!-->
+              <paper-progress value="{{a(team.points)}}"
+                              secondaryProgress="{{b(team.points)}}"
+                              class="{{prob(team.points)}}"></paper-progress>
+            </td>
+          </tr>
+          <tr>
+          </tr>
+          </tbody>
+        </table>
+      </paper-shadow>
+    </div>
 
-  </section>
+    <div ng-controller="Drivers">
+      <paper-shadow z="1">
+        <table layout>
+          <tr>
+            <th></th>
+            <th>Piloto</th>
+            <th class="prob">puntos</th>
+          </tr>
+          <tbody ng-repeat="piloto in resultados">
+          <tr>
+            <th class="dorsal">
+              <span class="{{piloto.Constructors[0].constructorId}}">{{piloto.Driver.permanentNumber}}</span></th>
+            <td class="nombre">
+              {{piloto.Driver.givenName}} {{piloto.Driver.familyName}}</td>
+            <td class="prob">
+              {{piloto.points}}</td>
+          </tr>
+          <tr>
+            <td colspan="3">
+              <!--!<paper-progress value="{{piloto.points / resultados[0].points * 100}}"></paper-progress>!-->
+              <paper-progress value="{{a(piloto.points)}}"
+                              secondaryProgress="{{b(piloto.points)}}"
+                              class="{{prob(piloto.points)}}"></paper-progress>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </paper-shadow>
+    </div>
+
+  </core-pages>
 
 
-  <section ng-controller="Drivers">
-
-    <paper-shadow z="1">
-      <table layout>
-        <tr>
-          <th></th>
-          <th>Piloto</th>
-          <th class="prob">puntos</th>
-        </tr>
-        <tbody ng-repeat="piloto in resultados">
-        <tr>
-          <th class="dorsal">
-            <span class="{{piloto.Constructors[0].constructorId}}">{{piloto.Driver.permanentNumber}}</span></th>
-          <td class="nombre">
-            {{piloto.Driver.givenName}} {{piloto.Driver.familyName}}</td>
-          <td class="prob">
-            {{piloto.points}}</td>
-        </tr>
-        <tr>
-          <td colspan="3">
-            <!--!<paper-progress value="{{piloto.points / resultados[0].points * 100}}"></paper-progress>!-->
-            <paper-progress value="{{a(piloto.points)}}"
-                            secondaryProgress="{{b(piloto.points)}}"
-                            class="{{prob(piloto.points)}}"></paper-progress>
-          </td>
-        </tr>
-        </tbody>
-      </table>
-    </paper-shadow>
-
-  </section>
-   <script src="main.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
