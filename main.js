@@ -17,18 +17,18 @@ angular.module("myapp", [])
       $scope.a = function(puntos) {
         var d = (puntos / $scope.c());
         return d;
-      }
+      };
 
       $scope.b = function(puntos) {
         var posibles = ($scope.carreras - $scope.round) * 25;
         var d =  (parseInt(puntos) + posibles ) / $scope.c();
         return d;
-      }
+      };
 
       $scope.c = function() {
         var d =  ($scope.carreras * 25 / 100);
         return d;
-      }
+      };
 
     }).
     error(function(data, status, headers, config) {
